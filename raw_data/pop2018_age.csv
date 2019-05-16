@@ -1,0 +1,754 @@
+city;pop_age;percent
+Abadiño;0 - 19;20
+Abadiño;20 - 64;60
+Abadiño;>= 65;19
+Abaltzisketa;0 - 19;23
+Abaltzisketa;20 - 64;60
+Abaltzisketa;>= 65;17
+Abanto y Ciérvana-Abanto Zierbena;0 - 19;18
+Abanto y Ciérvana-Abanto Zierbena;20 - 64;64
+Abanto y Ciérvana-Abanto Zierbena;>= 65;18
+Aduna;0 - 19;28
+Aduna;20 - 64;58
+Aduna;>= 65;14
+Agurain/Salvatierra;0 - 19;23
+Agurain/Salvatierra;20 - 64;61
+Agurain/Salvatierra;>= 65;16
+Aia;0 - 19;24
+Aia;20 - 64;59
+Aia;>= 65;17
+Aizarnazabal;0 - 19;27
+Aizarnazabal;20 - 64;59
+Aizarnazabal;>= 65;14
+Ajangiz;0 - 19;20
+Ajangiz;20 - 64;60
+Ajangiz;>= 65;20
+Albiztur;0 - 19;26
+Albiztur;20 - 64;54
+Albiztur;>= 65;20
+Alegia;0 - 19;22
+Alegia;20 - 64;57
+Alegia;>= 65;21
+Alegría-Dulantzi;0 - 19;27
+Alegría-Dulantzi;20 - 64;62
+Alegría-Dulantzi;>= 65;11
+Alkiza;0 - 19;30
+Alkiza;20 - 64;55
+Alkiza;>= 65;15
+Alonsotegi;0 - 19;18
+Alonsotegi;20 - 64;61
+Alonsotegi;>= 65;22
+Altzaga;0 - 19;30
+Altzaga;20 - 64;52
+Altzaga;>= 65;18
+Altzo;0 - 19;24
+Altzo;20 - 64;62
+Altzo;>= 65;14
+Amezketa;0 - 19;22
+Amezketa;20 - 64;57
+Amezketa;>= 65;21
+Amorebieta-Etxano;0 - 19;20
+Amorebieta-Etxano;20 - 64;60
+Amorebieta-Etxano;>= 65;20
+Amoroto;0 - 19;20
+Amoroto;20 - 64;59
+Amoroto;>= 65;21
+Amurrio;0 - 19;19
+Amurrio;20 - 64;60
+Amurrio;>= 65;21
+Andoain;0 - 19;20
+Andoain;20 - 64;58
+Andoain;>= 65;22
+Anoeta;0 - 19;22
+Anoeta;20 - 64;61
+Anoeta;>= 65;17
+Antzuola;0 - 19;22
+Antzuola;20 - 64;58
+Antzuola;>= 65;20
+Añana;0 - 19;8
+Añana;20 - 64;64
+Añana;>= 65;28
+Arakaldo;0 - 19;26
+Arakaldo;20 - 64;62
+Arakaldo;>= 65;12
+Arama;0 - 19;22
+Arama;20 - 64;58
+Arama;>= 65;19
+Aramaio;0 - 19;21
+Aramaio;20 - 64;57
+Aramaio;>= 65;21
+Arantzazu;0 - 19;21
+Arantzazu;20 - 64;61
+Arantzazu;>= 65;18
+Areatza;0 - 19;20
+Areatza;20 - 64;62
+Areatza;>= 65;18
+Aretxabaleta;0 - 19;21
+Aretxabaleta;20 - 64;58
+Aretxabaleta;>= 65;21
+Armiñón;0 - 19;22
+Armiñón;20 - 64;63
+Armiñón;>= 65;15
+Artea;0 - 19;20
+Artea;20 - 64;58
+Artea;>= 65;23
+Arraia-Maeztu;0 - 19;17
+Arraia-Maeztu;20 - 64;58
+Arraia-Maeztu;>= 65;25
+Arrankudiaga;0 - 19;21
+Arrankudiaga;20 - 64;61
+Arrankudiaga;>= 65;17
+Arrasate/Mondragón;0 - 19;17
+Arrasate/Mondragón;20 - 64;58
+Arrasate/Mondragón;>= 65;24
+Arratzu;0 - 19;21
+Arratzu;20 - 64;57
+Arratzu;>= 65;22
+Arrazua-Ubarrundia;0 - 19;20
+Arrazua-Ubarrundia;20 - 64;61
+Arrazua-Ubarrundia;>= 65;19
+Arrieta;0 - 19;17
+Arrieta;20 - 64;64
+Arrieta;>= 65;19
+Arrigorriaga;0 - 19;20
+Arrigorriaga;20 - 64;63
+Arrigorriaga;>= 65;17
+Artzentales;0 - 19;15
+Artzentales;20 - 64;62
+Artzentales;>= 65;23
+Artziniega;0 - 19;23
+Artziniega;20 - 64;60
+Artziniega;>= 65;17
+Asparrena;0 - 19;19
+Asparrena;20 - 64;61
+Asparrena;>= 65;20
+Asteasu;0 - 19;25
+Asteasu;20 - 64;59
+Asteasu;>= 65;16
+Astigarraga;0 - 19;24
+Astigarraga;20 - 64;64
+Astigarraga;>= 65;12
+Ataun;0 - 19;24
+Ataun;20 - 64;53
+Ataun;>= 65;23
+Atxondo;0 - 19;18
+Atxondo;20 - 64;61
+Atxondo;>= 65;21
+Aulesti;0 - 19;18
+Aulesti;20 - 64;55
+Aulesti;>= 65;27
+Ayala/Aiara;0 - 19;23
+Ayala/Aiara;20 - 64;60
+Ayala/Aiara;>= 65;16
+Azkoitia;0 - 19;23
+Azkoitia;20 - 64;58
+Azkoitia;>= 65;19
+Azpeitia;0 - 19;22
+Azpeitia;20 - 64;58
+Azpeitia;>= 65;21
+Bakio;0 - 19;20
+Bakio;20 - 64;62
+Bakio;>= 65;18
+Baliarrain;0 - 19;31
+Baliarrain;20 - 64;56
+Baliarrain;>= 65;13
+Balmaseda;0 - 19;18
+Balmaseda;20 - 64;59
+Balmaseda;>= 65;23
+Baños de Ebro/Mañueta;0 - 19;14
+Baños de Ebro/Mañueta;20 - 64;58
+Baños de Ebro/Mañueta;>= 65;29
+Barakaldo;0 - 19;17
+Barakaldo;20 - 64;60
+Barakaldo;>= 65;23
+Barrika;0 - 19;20
+Barrika;20 - 64;59
+Barrika;>= 65;21
+Barrundia;0 - 19;20
+Barrundia;20 - 64;61
+Barrundia;>= 65;18
+Basauri;0 - 19;16
+Basauri;20 - 64;58
+Basauri;>= 65;27
+Beasain;0 - 19;21
+Beasain;20 - 64;59
+Beasain;>= 65;20
+Bedia;0 - 19;17
+Bedia;20 - 64;62
+Bedia;>= 65;22
+Beizama;0 - 19;19
+Beizama;20 - 64;61
+Beizama;>= 65;20
+Belauntza;0 - 19;18
+Belauntza;20 - 64;57
+Belauntza;>= 65;24
+Berango;0 - 19;24
+Berango;20 - 64;59
+Berango;>= 65;16
+Berantevilla;0 - 19;18
+Berantevilla;20 - 64;54
+Berantevilla;>= 65;28
+Berastegi;0 - 19;22
+Berastegi;20 - 64;60
+Berastegi;>= 65;18
+Bergara;0 - 19;18
+Bergara;20 - 64;58
+Bergara;>= 65;24
+Bermeo;0 - 19;18
+Bermeo;20 - 64;59
+Bermeo;>= 65;23
+Bernedo;0 - 19;14
+Bernedo;20 - 64;57
+Bernedo;>= 65;29
+Berriatua;0 - 19;19
+Berriatua;20 - 64;59
+Berriatua;>= 65;22
+Berriz;0 - 19;21
+Berriz;20 - 64;59
+Berriz;>= 65;20
+Berrobi;0 - 19;22
+Berrobi;20 - 64;61
+Berrobi;>= 65;17
+Bidania-Goiatz;0 - 19;24
+Bidania-Goiatz;20 - 64;60
+Bidania-Goiatz;>= 65;16
+Bilbao;0 - 19;16
+Bilbao;20 - 64;60
+Bilbao;>= 65;24
+Busturia;0 - 19;18
+Busturia;20 - 64;56
+Busturia;>= 65;26
+Campezo/Kanpezu;0 - 19;17
+Campezo/Kanpezu;20 - 64;58
+Campezo/Kanpezu;>= 65;25
+Deba;0 - 19;19
+Deba;20 - 64;59
+Deba;>= 65;22
+Derio;0 - 19;21
+Derio;20 - 64;61
+Derio;>= 65;18
+Dima;0 - 19;21
+Dima;20 - 64;60
+Dima;>= 65;19
+Donostia / San Sebastián;0 - 19;17
+Donostia / San Sebastián;20 - 64;59
+Donostia / San Sebastián;>= 65;24
+Durango;0 - 19;20
+Durango;20 - 64;61
+Durango;>= 65;19
+Ea;0 - 19;12
+Ea;20 - 64;62
+Ea;>= 65;26
+Eibar;0 - 19;18
+Eibar;20 - 64;57
+Eibar;>= 65;25
+Elantxobe;0 - 19;9
+Elantxobe;20 - 64;57
+Elantxobe;>= 65;34
+Elburgo/Burgelu;0 - 19;20
+Elburgo/Burgelu;20 - 64;66
+Elburgo/Burgelu;>= 65;13
+Elciego;0 - 19;20
+Elciego;20 - 64;57
+Elciego;>= 65;23
+Elduain;0 - 19;27
+Elduain;20 - 64;54
+Elduain;>= 65;20
+Elgeta;0 - 19;21
+Elgeta;20 - 64;61
+Elgeta;>= 65;18
+Elgoibar;0 - 19;20
+Elgoibar;20 - 64;58
+Elgoibar;>= 65;22
+Elorrio;0 - 19;19
+Elorrio;20 - 64;59
+Elorrio;>= 65;22
+Elvillar/Bilar;0 - 19;18
+Elvillar/Bilar;20 - 64;57
+Elvillar/Bilar;>= 65;26
+Erandio;0 - 19;18
+Erandio;20 - 64;61
+Erandio;>= 65;21
+Ereño;0 - 19;15
+Ereño;20 - 64;58
+Ereño;>= 65;28
+Ermua;0 - 19;17
+Ermua;20 - 64;58
+Ermua;>= 65;24
+Errenteria;0 - 19;19
+Errenteria;20 - 64;58
+Errenteria;>= 65;23
+Errezil;0 - 19;23
+Errezil;20 - 64;60
+Errezil;>= 65;17
+Erriberagoitia/Ribera Alta;0 - 19;19
+Erriberagoitia/Ribera Alta;20 - 64;63
+Erriberagoitia/Ribera Alta;>= 65;19
+Errigoiti;0 - 19;16
+Errigoiti;20 - 64;59
+Errigoiti;>= 65;26
+Eskoriatza;0 - 19;21
+Eskoriatza;20 - 64;58
+Eskoriatza;>= 65;21
+Etxebarri;0 - 19;24
+Etxebarri;20 - 64;62
+Etxebarri;>= 65;14
+Etxebarria;0 - 19;18
+Etxebarria;20 - 64;62
+Etxebarria;>= 65;20
+Ezkio-Itsaso;0 - 19;20
+Ezkio-Itsaso;20 - 64;58
+Ezkio-Itsaso;>= 65;22
+Forua;0 - 19;15
+Forua;20 - 64;62
+Forua;>= 65;23
+Fruiz;0 - 19;23
+Fruiz;20 - 64;60
+Fruiz;>= 65;17
+Gabiria;0 - 19;21
+Gabiria;20 - 64;60
+Gabiria;>= 65;19
+Gaintza;0 - 19;18
+Gaintza;20 - 64;58
+Gaintza;>= 65;24
+Galdakao;0 - 19;17
+Galdakao;20 - 64;62
+Galdakao;>= 65;21
+Galdames;0 - 19;17
+Galdames;20 - 64;60
+Galdames;>= 65;24
+Gamiz-Fika;0 - 19;17
+Gamiz-Fika;20 - 64;64
+Gamiz-Fika;>= 65;20
+Garai;0 - 19;22
+Garai;20 - 64;61
+Garai;>= 65;17
+Gatika;0 - 19;22
+Gatika;20 - 64;58
+Gatika;>= 65;20
+Gautegiz Arteaga;0 - 19;17
+Gautegiz Arteaga;20 - 64;63
+Gautegiz Arteaga;>= 65;20
+Gaztelu;0 - 19;22
+Gaztelu;20 - 64;57
+Gaztelu;>= 65;20
+Gernika-Lumo;0 - 19;19
+Gernika-Lumo;20 - 64;58
+Gernika-Lumo;>= 65;23
+Getaria;0 - 19;20
+Getaria;20 - 64;60
+Getaria;>= 65;20
+Getxo;0 - 19;17
+Getxo;20 - 64;59
+Getxo;>= 65;24
+Gizaburuaga;0 - 19;22
+Gizaburuaga;20 - 64;62
+Gizaburuaga;>= 65;16
+Gordexola;0 - 19;18
+Gordexola;20 - 64;61
+Gordexola;>= 65;21
+Gorliz;0 - 19;21
+Gorliz;20 - 64;62
+Gorliz;>= 65;17
+Güeñes;0 - 19;19
+Güeñes;20 - 64;61
+Güeñes;>= 65;20
+Harana/Valle de Arana;0 - 19;7
+Harana/Valle de Arana;20 - 64;54
+Harana/Valle de Arana;>= 65;39
+Hernani;0 - 19;20
+Hernani;20 - 64;61
+Hernani;>= 65;20
+Hernialde;0 - 19;18
+Hernialde;20 - 64;61
+Hernialde;>= 65;21
+Hondarribia;0 - 19;20
+Hondarribia;20 - 64;58
+Hondarribia;>= 65;22
+Ibarra;0 - 19;20
+Ibarra;20 - 64;57
+Ibarra;>= 65;24
+Ibarrangelu;0 - 19;13
+Ibarrangelu;20 - 64;65
+Ibarrangelu;>= 65;21
+Idiazabal;0 - 19;23
+Idiazabal;20 - 64;54
+Idiazabal;>= 65;23
+Igorre;0 - 19;20
+Igorre;20 - 64;60
+Igorre;>= 65;19
+Ikaztegieta;0 - 19;21
+Ikaztegieta;20 - 64;61
+Ikaztegieta;>= 65;19
+Irun;0 - 19;19
+Irun;20 - 64;60
+Irun;>= 65;21
+Iruña Oka/Iruña de Oca;0 - 19;24
+Iruña Oka/Iruña de Oca;20 - 64;64
+Iruña Oka/Iruña de Oca;>= 65;12
+Irura;0 - 19;28
+Irura;20 - 64;62
+Irura;>= 65;10
+Iruraiz-Gauna;0 - 19;17
+Iruraiz-Gauna;20 - 64;65
+Iruraiz-Gauna;>= 65;18
+Ispaster;0 - 19;23
+Ispaster;20 - 64;56
+Ispaster;>= 65;22
+Itsasondo;0 - 19;23
+Itsasondo;20 - 64;58
+Itsasondo;>= 65;19
+Iurreta;0 - 19;18
+Iurreta;20 - 64;59
+Iurreta;>= 65;24
+Izurtza;0 - 19;24
+Izurtza;20 - 64;59
+Izurtza;>= 65;18
+Karrantza Harana/Valle de Carranza;0 - 19;14
+Karrantza Harana/Valle de Carranza;20 - 64;59
+Karrantza Harana/Valle de Carranza;>= 65;28
+Kortezubi;0 - 19;22
+Kortezubi;20 - 64;57
+Kortezubi;>= 65;21
+Kripan;0 - 19;20
+Kripan;20 - 64;53
+Kripan;>= 65;26
+Kuartango;0 - 19;13
+Kuartango;20 - 64;63
+Kuartango;>= 65;24
+Labastida/Bastida;0 - 19;21
+Labastida/Bastida;20 - 64;59
+Labastida/Bastida;>= 65;20
+Lagrán;0 - 19;9
+Lagrán;20 - 64;53
+Lagrán;>= 65;38
+Laguardia;0 - 19;17
+Laguardia;20 - 64;62
+Laguardia;>= 65;21
+Lanciego/Lantziego;0 - 19;19
+Lanciego/Lantziego;20 - 64;57
+Lanciego/Lantziego;>= 65;24
+Lanestosa;0 - 19;12
+Lanestosa;20 - 64;64
+Lanestosa;>= 65;24
+Lantarón;0 - 19;13
+Lantarón;20 - 64;63
+Lantarón;>= 65;24
+Lapuebla de Labarca;0 - 19;20
+Lapuebla de Labarca;20 - 64;60
+Lapuebla de Labarca;>= 65;20
+Larrabetzu;0 - 19;23
+Larrabetzu;20 - 64;59
+Larrabetzu;>= 65;18
+Larraul;0 - 19;29
+Larraul;20 - 64;60
+Larraul;>= 65;11
+Lasarte-Oria;0 - 19;18
+Lasarte-Oria;20 - 64;58
+Lasarte-Oria;>= 65;24
+Laudio/Llodio;0 - 19;16
+Laudio/Llodio;20 - 64;58
+Laudio/Llodio;>= 65;25
+Laukiz;0 - 19;24
+Laukiz;20 - 64;57
+Laukiz;>= 65;19
+Lazkao;0 - 19;22
+Lazkao;20 - 64;59
+Lazkao;>= 65;19
+Leaburu;0 - 19;23
+Leaburu;20 - 64;58
+Leaburu;>= 65;19
+Legazpi;0 - 19;18
+Legazpi;20 - 64;57
+Legazpi;>= 65;25
+Legorreta;0 - 19;22
+Legorreta;20 - 64;56
+Legorreta;>= 65;23
+Legutio;0 - 19;20
+Legutio;20 - 64;63
+Legutio;>= 65;17
+Leintz-Gatzaga;0 - 19;21
+Leintz-Gatzaga;20 - 64;58
+Leintz-Gatzaga;>= 65;22
+Leioa;0 - 19;20
+Leioa;20 - 64;62
+Leioa;>= 65;19
+Lekeitio;0 - 19;18
+Lekeitio;20 - 64;58
+Lekeitio;>= 65;24
+Lemoa;0 - 19;20
+Lemoa;20 - 64;63
+Lemoa;>= 65;17
+Lemoiz;0 - 19;21
+Lemoiz;20 - 64;64
+Lemoiz;>= 65;15
+Leza;0 - 19;18
+Leza;20 - 64;54
+Leza;>= 65;28
+Lezama;0 - 19;21
+Lezama;20 - 64;60
+Lezama;>= 65;19
+Lezo;0 - 19;19
+Lezo;20 - 64;64
+Lezo;>= 65;17
+Lizartza;0 - 19;21
+Lizartza;20 - 64;57
+Lizartza;>= 65;23
+Loiu;0 - 19;23
+Loiu;20 - 64;58
+Loiu;>= 65;19
+Mallabia;0 - 19;16
+Mallabia;20 - 64;61
+Mallabia;>= 65;23
+Mañaria;0 - 19;19
+Mañaria;20 - 64;61
+Mañaria;>= 65;19
+Markina-Xemein;0 - 19;20
+Markina-Xemein;20 - 64;59
+Markina-Xemein;>= 65;21
+Maruri-Jatabe;0 - 19;19
+Maruri-Jatabe;20 - 64;61
+Maruri-Jatabe;>= 65;21
+Mendaro;0 - 19;26
+Mendaro;20 - 64;57
+Mendaro;>= 65;17
+Mendata;0 - 19;20
+Mendata;20 - 64;57
+Mendata;>= 65;23
+Mendexa;0 - 19;16
+Mendexa;20 - 64;62
+Mendexa;>= 65;22
+Meñaka;0 - 19;19
+Meñaka;20 - 64;59
+Meñaka;>= 65;23
+Moreda de Álava/Moreda Araba;0 - 19;12
+Moreda de Álava/Moreda Araba;20 - 64;63
+Moreda de Álava/Moreda Araba;>= 65;25
+Morga;0 - 19;15
+Morga;20 - 64;60
+Morga;>= 65;25
+Mundaka;0 - 19;16
+Mundaka;20 - 64;58
+Mundaka;>= 65;26
+Mungia;0 - 19;22
+Mungia;20 - 64;62
+Mungia;>= 65;16
+Munitibar-Arbatzegi Gerrikaitz;0 - 19;15
+Munitibar-Arbatzegi Gerrikaitz;20 - 64;62
+Munitibar-Arbatzegi Gerrikaitz;>= 65;23
+Murueta;0 - 19;21
+Murueta;20 - 64;65
+Murueta;>= 65;14
+Muskiz;0 - 19;19
+Muskiz;20 - 64;61
+Muskiz;>= 65;19
+Mutiloa;0 - 19;25
+Mutiloa;20 - 64;56
+Mutiloa;>= 65;19
+Mutriku;0 - 19;20
+Mutriku;20 - 64;60
+Mutriku;>= 65;20
+Muxika;0 - 19;22
+Muxika;20 - 64;57
+Muxika;>= 65;22
+Nabarniz;0 - 19;19
+Nabarniz;20 - 64;65
+Nabarniz;>= 65;16
+Navaridas;0 - 19;14
+Navaridas;20 - 64;67
+Navaridas;>= 65;19
+Oiartzun;0 - 19;21
+Oiartzun;20 - 64;60
+Oiartzun;>= 65;19
+Okondo;0 - 19;21
+Okondo;20 - 64;63
+Okondo;>= 65;16
+Olaberria;0 - 19;17
+Olaberria;20 - 64;55
+Olaberria;>= 65;28
+Ondarroa;0 - 19;16
+Ondarroa;20 - 64;60
+Ondarroa;>= 65;24
+Oñati;0 - 19;20
+Oñati;20 - 64;57
+Oñati;>= 65;23
+Ordizia;0 - 19;22
+Ordizia;20 - 64;59
+Ordizia;>= 65;19
+Orendain;0 - 19;29
+Orendain;20 - 64;55
+Orendain;>= 65;15
+Orexa;0 - 19;31
+Orexa;20 - 64;51
+Orexa;>= 65;18
+Orio;0 - 19;23
+Orio;20 - 64;61
+Orio;>= 65;16
+Ormaiztegi;0 - 19;22
+Ormaiztegi;20 - 64;58
+Ormaiztegi;>= 65;20
+Orozko;0 - 19;21
+Orozko;20 - 64;58
+Orozko;>= 65;20
+Ortuella;0 - 19;17
+Ortuella;20 - 64;62
+Ortuella;>= 65;21
+Otxandio;0 - 19;21
+Otxandio;20 - 64;57
+Otxandio;>= 65;22
+Oyón-Oion;0 - 19;26
+Oyón-Oion;20 - 64;58
+Oyón-Oion;>= 65;16
+Pasaia;0 - 19;18
+Pasaia;20 - 64;60
+Pasaia;>= 65;22
+Peñacerrada-Urizaharra;0 - 19;10
+Peñacerrada-Urizaharra;20 - 64;68
+Peñacerrada-Urizaharra;>= 65;22
+Plentzia;0 - 19;20
+Plentzia;20 - 64;63
+Plentzia;>= 65;17
+Portugalete;0 - 19;15
+Portugalete;20 - 64;58
+Portugalete;>= 65;27
+Ribera Baja/Erribera Beitia;0 - 19;23
+Ribera Baja/Erribera Beitia;20 - 64;63
+Ribera Baja/Erribera Beitia;>= 65;13
+Samaniego;0 - 19;15
+Samaniego;20 - 64;57
+Samaniego;>= 65;28
+San Millán/Donemiliaga;0 - 19;17
+San Millán/Donemiliaga;20 - 64;60
+San Millán/Donemiliaga;>= 65;23
+Santurtzi;0 - 19;17
+Santurtzi;20 - 64;60
+Santurtzi;>= 65;23
+Segura;0 - 19;23
+Segura;20 - 64;58
+Segura;>= 65;19
+Sestao;0 - 19;16
+Sestao;20 - 64;59
+Sestao;>= 65;25
+Sondika;0 - 19;20
+Sondika;20 - 64;59
+Sondika;>= 65;21
+Sopelana;0 - 19;22
+Sopelana;20 - 64;64
+Sopelana;>= 65;15
+Sopuerta;0 - 19;17
+Sopuerta;20 - 64;60
+Sopuerta;>= 65;23
+Soraluze/Placencia de las Armas;0 - 19;18
+Soraluze/Placencia de las Armas;20 - 64;58
+Soraluze/Placencia de las Armas;>= 65;24
+Sukarrieta;0 - 19;13
+Sukarrieta;20 - 64;57
+Sukarrieta;>= 65;30
+Tolosa;0 - 19;20
+Tolosa;20 - 64;58
+Tolosa;>= 65;22
+Trucios-Turtzioz;0 - 19;11
+Trucios-Turtzioz;20 - 64;64
+Trucios-Turtzioz;>= 65;25
+Ubide;0 - 19;16
+Ubide;20 - 64;65
+Ubide;>= 65;18
+Ugao-Miraballes;0 - 19;18
+Ugao-Miraballes;20 - 64;61
+Ugao-Miraballes;>= 65;21
+Urduliz;0 - 19;21
+Urduliz;20 - 64;63
+Urduliz;>= 65;16
+Urduña/Orduña;0 - 19;20
+Urduña/Orduña;20 - 64;59
+Urduña/Orduña;>= 65;21
+Urkabustaiz;0 - 19;24
+Urkabustaiz;20 - 64;62
+Urkabustaiz;>= 65;14
+Urnieta;0 - 19;22
+Urnieta;20 - 64;62
+Urnieta;>= 65;16
+Urretxu;0 - 19;21
+Urretxu;20 - 64;58
+Urretxu;>= 65;21
+Usurbil;0 - 19;23
+Usurbil;20 - 64;59
+Usurbil;>= 65;18
+Valdegovía/Gaubea;0 - 19;13
+Valdegovía/Gaubea;20 - 64;58
+Valdegovía/Gaubea;>= 65;29
+Valle de Trápaga-Trapagaran;0 - 19;17
+Valle de Trápaga-Trapagaran;20 - 64;60
+Valle de Trápaga-Trapagaran;>= 65;23
+Villabona;0 - 19;21
+Villabona;20 - 64;59
+Villabona;>= 65;20
+Villabuena de Álava/Eskuernaga;0 - 19;14
+Villabuena de Álava/Eskuernaga;20 - 64;59
+Villabuena de Álava/Eskuernaga;>= 65;27
+Vitoria-Gasteiz;0 - 19;19
+Vitoria-Gasteiz;20 - 64;60
+Vitoria-Gasteiz;>= 65;21
+Yécora/Iekora;0 - 19;19
+Yécora/Iekora;20 - 64;55
+Yécora/Iekora;>= 65;26
+Zaldibar;0 - 19;20
+Zaldibar;20 - 64;60
+Zaldibar;>= 65;20
+Zaldibia;0 - 19;22
+Zaldibia;20 - 64;58
+Zaldibia;>= 65;20
+Zalduondo;0 - 19;21
+Zalduondo;20 - 64;63
+Zalduondo;>= 65;15
+Zalla;0 - 19;19
+Zalla;20 - 64;62
+Zalla;>= 65;19
+Zambrana;0 - 19;16
+Zambrana;20 - 64;64
+Zambrana;>= 65;20
+Zamudio;0 - 19;18
+Zamudio;20 - 64;59
+Zamudio;>= 65;22
+Zaratamo;0 - 19;18
+Zaratamo;20 - 64;62
+Zaratamo;>= 65;20
+Zarautz;0 - 19;20
+Zarautz;20 - 64;60
+Zarautz;>= 65;20
+Zeanuri;0 - 19;19
+Zeanuri;20 - 64;60
+Zeanuri;>= 65;22
+Zeberio;0 - 19;18
+Zeberio;20 - 64;60
+Zeberio;>= 65;21
+Zegama;0 - 19;22
+Zegama;20 - 64;59
+Zegama;>= 65;19
+Zerain;0 - 19;21
+Zerain;20 - 64;54
+Zerain;>= 65;25
+Zestoa;0 - 19;22
+Zestoa;20 - 64;59
+Zestoa;>= 65;19
+Zierbena;0 - 19;17
+Zierbena;20 - 64;64
+Zierbena;>= 65;19
+Zigoitia;0 - 19;19
+Zigoitia;20 - 64;62
+Zigoitia;>= 65;18
+Ziortza-Bolibar;0 - 19;15
+Ziortza-Bolibar;20 - 64;59
+Ziortza-Bolibar;>= 65;25
+Zizurkil;0 - 19;22
+Zizurkil;20 - 64;57
+Zizurkil;>= 65;21
+Zuia;0 - 19;22
+Zuia;20 - 64;60
+Zuia;>= 65;18
+Zumaia;0 - 19;22
+Zumaia;20 - 64;59
+Zumaia;>= 65;18
+Zumarraga;0 - 19;18
+Zumarraga;20 - 64;57
+Zumarraga;>= 65;24

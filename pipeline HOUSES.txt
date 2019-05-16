@@ -1,0 +1,71 @@
+
+>>>>>> EMPLEAR DATOS DE BIZKAIA Y GIPUZKOA
+
++ 1.DESCRIPCION DATASET: (0.5 puntos)
+
+
++ 2.INTEGRAR DATOS: (0.5 puntos)
+
+	* DATA INTEGRATION *
+
+	- CATEGORIZAR VARIABLES Y ATRIBUTOS (describir los datos: volumen, tipo...)
+	- REVISAR ASIGNACIÓN DE VARIABLES CORRECTA en DATAFRAME
+	- CONCILIAR CAMPOS (Rentas PV + GIPUZKOA + BIZKAIA)
+	- ·· estudio de fiabilidad de los datos ··
+	- ·· estudio temporal de los datos ··
+	- ·· ¿metadatos? ··
+	-  ¿SELECCION PREVIA DE DATOS?
+
+
++ 3.LIMPIEZA DATOS: (2 puntos)
+
+	* DATA VERIFICATION & DATA CLEANING *
+
+	- DIVIDIR LOS DATOS (ALQUILER / VENTA)
+	- VERIFICAR DATOS DUPLICADOS (ID REPETIDO)
+	- RESOLVER REDUNDANCIAS (CAMPOS REPETIDOS)
+	- VERIFICAR DATOS INCONSISTENTES
+		- COMPROBAR CONTRADICCIONES CRUZANDO CAMPOS  ->  CORREGIR ERRORES
+		- ESTANDARIZAR VARIABLES (texto, valores categóricos, caracteres sobrantes(\n, \t, ...), números con decimales, ...)
+	- VERIFICAR DATOS CON RUIDO
+		- RANGO ESPERADO EN CADA CAMPO  ->  SUAVIZAR RUIDO, CORREGIR ERRORES
+	
+	- DETECCIÓN Y TRATAMIENTO DE OUTLIERS (¿valor centinela?)
+	- RESOLVER DATOS INCOMPLETOS - MISSING VALUES [empty; blank; zero; null] ... (¿imputación?)
+	- MEJORAR INTERPRETABILIDAD (¿cambiar nombres de campos? ¿Cambiar forma de exprEsar valores?
+	
+
++ 4.ANÁLISIS + 5.REPRESENTACIÓN DE RESULTADOS: (2.5 puntos + 2 puntos)
+	
+	* EDA *
+
+	- ANÁLISIS ESTADÍSTICO DESCRIPTIVO (5-num-summary (box plots), tendencia central, plots, histogramas, ...)
+	- DISMINUIR DIMENSIONALIDAD Y REPRESENTAR GRÁFICAMENTE: T-SNE
+
+	- ESTUDIO DE CORRELACIÓN ENTRE VARIABLES
+
+	- TÉCNICAS GRÁFICAS PARA EXPLORACIÓN EN BASE A PREGUNTAS DE ANÁLISIS
+
+	- ... COMPROBACIÓN DE NORMALIDAD Y HOMOGENEIDAD DE LA VARIANZA ... ¿?
+
+	- CORROBORAR HIPÓTESIS. MEDIANTE TESTS (al menos 2/3)
+		- pruebas de hipótesis
+		- análisis de varianza
+		- intervalos de confianza
+
+
+	* DATA WRANGLING *
+
+	- SELECCIÓN/FUSIÓN/CREACIÓN DE VARIABLES PARA EL MODELO
+
+	* MODELO *
+
+	- DIFERENTES MODELOS (REGRESIÓN LINEAL, SVC, TREES, XG-BOOST)
+
+
++ 6.CONCLUSIÓN (0.5 puntos)
+
+
++ 7.CÓDIGO (2 puntos)
+
+

@@ -1,0 +1,14 @@
+- Basque Country rent by city:
+http://www.eustat.eus/bankupx/pxweb/es/spanish/-/PX_2380_rpf_rp11s.px#axzz5o0JG5c8D
+
+- Basque Country rent by neighborhood:
+http://www.eustat.eus/bankupx/pxweb/es/spanish/-/PX_2380_rpf_rp22_2p.px#axzz5o0JG5c8D
+
+- Basque Country population by neighborhood:
+http://www.eustat.eus/elementos/ele0013700/Poblacion_de_la_CA_de_Euskadi_por_barrios_de_los_municipios_de_mas_de_10000_habitantes_segun_sexo_grupos_de_edad_y_nacionalidad/tbl0013711_c.html
+
+- Basque Country population by city:
+http://www.eustat.eus/bankupx/pxweb/es/spanish/-/PX_2212_ep06b.px#axzz5o0JG5c8D
+
+- Basque Country population by city (foreign percent):
+http://www.eustat.eus/bankupx/pxweb/es/spanish/-/PX_2212_ep16c.px#axzz5o0JG5c8D
