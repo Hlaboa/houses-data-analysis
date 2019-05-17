@@ -29,10 +29,9 @@
 		- ESTANDARIZAR VARIABLES (texto, valores categóricos, caracteres sobrantes(\n, \t, ...), números con decimales, ...)
 	- VERIFICAR DATOS CON RUIDO
 		- RANGO ESPERADO EN CADA CAMPO  ->  SUAVIZAR RUIDO, CORREGIR ERRORES
-	
-	- DETECCIÓN Y TRATAMIENTO DE OUTLIERS (¿valor centinela?)
 	- RESOLVER DATOS INCOMPLETOS - MISSING VALUES [empty; blank; zero; null] ... (¿imputación?)
-	- MEJORAR INTERPRETABILIDAD (¿cambiar nombres de campos? ¿Cambiar forma de exprEsar valores?
+	- DETECCIÓN Y TRATAMIENTO DE OUTLIERS (¿valor centinela?)
+	- MEJORAR INTERPRETABILIDAD (¿cambiar nombres de campos? ¿Cambiar forma de expresar valores?
 	
 
 + 4.ANÁLISIS + 5.REPRESENTACIÓN DE RESULTADOS: (2.5 puntos + 2 puntos)
