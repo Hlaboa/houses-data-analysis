@@ -13152,7 +13152,7 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">GridSearchCV</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./processed_data/houses_cleaned.p&#39;</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../processed_data/houses_cleaned.p&#39;</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">))</span>
 
 <span class="c1"># Omitimos los warnings</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
@@ -13190,7 +13190,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Los modelos de regresión (tanto el logístico como el lineal), requieren que las variables sean numéricas. Por lo tanto, para poder incluir variables categóricas, tenemos que realizar un <strong>one-hot-encoding</strong>. En nuestro conjunto de datos tenemos las siguientes variables categóricas:</p>
+<p>Los modelos de regresión requieren que las variables sean numéricas. Por lo tanto, para poder incluir variables categóricas, tenemos que realizar un <strong>one-hot-encoding</strong>. En nuestro conjunto de datos tenemos las siguientes variables categóricas:</p>
 <ul>
 <li><strong><font color=#5F66A1>house_type</font></strong></li>
 <li><strong><font color=#5F66A1>condition</font></strong></li>
@@ -13695,7 +13695,7 @@ Accuracy: 91.47 %
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Vemos que el modelo que hemos implementado es capaz de determinar de forma acertada si una vivienda se ajusta o no a nuestro presupuesto en algo más de 9 de cada 10 ocasiones, lo cual no está nada mal. Quizás una elección de algún otro modelo más complejo incluso pudiera mejorar esta precisión. No obstante, dejaremos este modelo así, y nos centraremos, sobre todo, en la implementación del modelo de regresión lineal que predice el precio de las viviendas.</p>
+<p>Vemos que el modelo que hemos implementado es capaz de determinar de forma acertada si una vivienda se ajusta o no a nuestro presupuesto en algo más de 9 de cada 10 ocasiones, lo cual no está nada mal. Quizás una elección de algún otro modelo más complejo incluso pudiera mejorar esta precisión. No obstante, dejaremos este modelo así, y nos centraremos, sobre todo, en la implementación del siguiente modelo de regresión que predice el precio de las viviendas.</p>
 
 </div>
 </div>
@@ -13703,7 +13703,15 @@ Accuracy: 91.47 %
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Modelo-de-regresi&#243;n-lineal">Modelo de regresi&#243;n lineal<a class="anchor-link" href="#Modelo-de-regresi&#243;n-lineal">&#182;</a></h1>
+<h1 id="Modelo-de-regresi&#243;n:-predicci&#243;n-del-precio-de-las-viviendas">Modelo de regresi&#243;n: predicci&#243;n del precio de las viviendas<a class="anchor-link" href="#Modelo-de-regresi&#243;n:-predicci&#243;n-del-precio-de-las-viviendas">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>El segundo modelo que implementaremos corresponde con un modelo de regresión con el que trataremos de predecir el precio de las viviendas a partir de sus características.</p>
+
 </div>
 </div>
 </div>
@@ -13717,11 +13725,11 @@ Accuracy: 91.47 %
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Para el caso del modelo de regresión lineal, nos valdremos de la técnica de potenciación del gradiente (<em>Gradient Boosting</em>), la cual sirve para generar un modelo predictivo de gran precisión mediante la suma de muchos modelos de predicción débiles (árboles de decisión).</p>
+<p>Para el caso del segundo modelo de regresión, nos valdremos de la técnica de potenciación del gradiente (<em>Gradient Boosting</em>), la cual sirve para generar un modelo predictivo de gran precisión mediante la suma de muchos modelos de predicción débiles (árboles de decisión).</p>
 <p>Más concretamente, emplearemos una implementación de esta técnica llamada <strong>XG-Boost</strong>, <em>eXtreme Gradient Boosting</em>, ya que se ha convertido, gracias a su eficiencia y eficacia, en uno de los modelos más empleados en la actualidad para lidiar con problemas de regresión y clasificación relacionados con datos tabulares, como en este caso.</p>
 <p>Este gran rendimiento viene dado, entre otros factores, por el amplio abanico de hiperparámetros que contiene. Estos hiperparámetros permiten un ajuste muy minucioso y, con una buena afinación, se puede lograr optimizar y mejorar el resultado obtenido de forma considerable.</p>
 <p>No obstante, esta afinación no es trivial, y requiere que, para conseguir buenos resultados, sea necesaria una cuidadosa estrategia de hiperparametrización.</p>
-<p>Así, dado que gran parte de la implementación del modelo de regresión líneal recae sobre esta búsqueda, conviene realizar una breve descripción inicial acerca de cuales son estos hiperparámetros, y de qué modo afectan a nuestro modelo:</p>
+<p>Así, dado que gran parte de la implementación de nuestro modelo de regresión recae sobre esta búsqueda, conviene realizar una breve descripción inicial acerca de cuales son estos hiperparámetros, y de qué modo afectan a nuestro modelo:</p>
 
 </div>
 </div>
@@ -14139,8 +14147,7 @@ Y viceversa, a medida que su valor se vaya acercando a 1 (nodos sin ninguna rest
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Con este segundo modelo, implementaremos un modelo de regresión para tratar de predecir el precio de las viviendas. Para ello, antes de poder alimentarlo con datos, sera necesario adaptar estos de acuerdo con las necesidades del modelo.</p>
-<p>Así, el modelo de regresión lineal requiere que las variables sean también numéricas. Por lo tanto, procedemos nuevamente a emplear <strong>one-hot-encoding</strong>, tal y como se hiciera en la implementación del modelo anterior:</p>
+<p>Antes de poder alimentar el modelo con datos, sera necesario adaptar estos de acuerdo con las necesidades del modelo. Por lo tanto, al ser un modelo de regresión, procedemos nuevamente a emplear <strong>one-hot-encoding</strong>, tal y como se hiciera en la implementación del modelo anterior:</p>
 <p>No obstante, antes de nada realizaremos una criba preliminar de los datos que disponemos, descartando todas las viviendas con precio superior a los 400.000€:</p>
 
 </div>
