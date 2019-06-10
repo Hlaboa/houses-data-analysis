@@ -13199,7 +13199,7 @@ div#notebook {
 <li><strong><font color=#5F66A1>loc_city</font></strong></li>
 <li><strong><font color=#5F66A1>loc_zone</font></strong></li>
 </ul>
-<p>En el caso de las variables relacionadas con la ubicación, en realidad las 3 hacen referencia a una sola, solo que con granularidad distinta. Por ello, optaremos por quedarnos con la más específica, <strong><font color=#5F66A1>location</font></strong>, y descartaremos el resto, para no incurrir en problemas de multicolinealidad. Con lo cual, procedemos a crear las variables <em>dummy</em>:</p>
+<p>En el caso de las variables relacionadas con la ubicación, en realidad las 3 hacen referencia a una sola, solo que con granularidad distinta. Por ello, optaremos por quedarnos con la más específica, <strong><font color=#5F66A1>location</font></strong>, y descartaremos el resto. Por tanto, procedemos a crear las variables <em>dummy</em>:</p>
 
 </div>
 </div>
@@ -13335,9 +13335,9 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Por cada variable hemos se han generado tantas nuevas variables como categorías distintas hubiere. Estas nuevas variables, en aquellas viviendas que sean de esa categoría toman como valor 1, y en el resto,0. Esto puede comprobarse con el ejemplo superior, donde vemos que por cada tipo de casa se ha generado una nueva variable binaria, que toma como valor 1 solo si la vivienda corresponde con su categoría.</p>
-<p>Por otro lado, en los modelos de regresión conviene no emplear variables correlacionadas, ya que su inclusion genera multicolinealidad, lo cual es un factor de inestabilidad que ha de evitarse. Sin embargo, al crear las variables <em>dummy</em> hemos añadido cierto nivel de multiconlinealidad, ya que las variables no son independientes entre sí. Esto se percibe claramente al pensar en que no hace falta la variable <strong>Ático</strong> para saber cuando una vivienda es un ático. Basta con ver cuando el resto de variables tiene todas valores nulos para saber que esa vivienda es un ático.</p>
-<p>Esta multiconlinealidad la podemos evitar fácilmente desprendiéndonos de una de las variables generadas. Por lo tanto, procedemos a descartar una columna por cada variable dummy que hemos creado. En este caso, para el ejemplo antes visto del tipo de casa, descartaremos la columna <em>Otros</em>, ya que es la menos representativa:</p>
+<p>Por cada variable, hemos generado tantas nuevas variables como categorías distintas hubiere. Estas nuevas variables son binarias, y toman como valor un 1 solo si la vivienda es de dicha categoría, tomando como valor 0 en el resto de casos. Puede comprobarse lo descrito en el ejemplo superior, donde vemos que, por cada tipo de casa, se ha generado una nueva variable binaria que toma como valor 1 solo si la vivienda corresponde con su categoría.</p>
+<p>Por otro lado, en los modelos de regresión conviene no emplear variables correlacionadas, ya que su inclusion genera multicolinealidad, lo cual es un factor de inestabilidad que ha de evitarse siempre que sea posible. Sin embargo, al crear las variables <em>dummy</em>, hemos añadido cierto nivel de multiconlinealidad, ya que las variables no son independientes entre sí. Esto se percibe claramente al pensar que no hace falta la variable <strong>Ático</strong> para saber cuando una vivienda es un ático. Basta con ver cuando el resto de variables tiene todas valores nulos para deducir que se trata de un ático.</p>
+<p>No obstante, esta multicolinealidad la podemos evitar fácilmente desprendiéndonos de una de las variables generadas. Así, procedemos a descartar una columna por cada variable dummy que hemos creado. En el caso arriba descrito del tipo de vivienda, por ejemplo, descartaremos la columna <em>Otros</em>, ya que es la menos representativa:</p>
 
 </div>
 </div>
@@ -13467,7 +13467,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Una vez tenemos ya nuestras variables dummy, solo nos resta añadirlas a nuestro conjunto de datos principal, a la par que nos deshacemos de todas las categóricas:</p>
+<p>Una vez tenemos ya nuestras variables codificadas, solo nos resta añadirlas a nuestro conjunto de datos principal, a la par que nos deshacemos de todas las variables categóricas aún sin codificar:</p>
 
 </div>
 </div>
@@ -13490,7 +13490,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A continuación, descartamos tanto las variables de exploración (<strong><font color=#5F66A1>house_id</font></strong> y <strong><font color=#5F66A1>ad_description</font></strong>), así como las variables que en el análisis exploratorio hemos descubierto están correlacionadas entre sí (<strong><font color=#5F66A1>pop_total</font></strong> y <strong><font color=#5F66A1>pop_>=65</font></strong>)</p>
+<p>A continuación, descartamos tanto las variables de identificación y exploración (<strong><font color=#5F66A1>house_id</font></strong> y <strong><font color=#5F66A1>ad_description</font></strong>), así como las variables que en el análisis exploratorio hemos descubierto están correlacionadas entre sí (<strong><font color=#5F66A1>pop_total</font></strong> y <strong><font color=#5F66A1>pop_>=65</font></strong>)</p>
 
 </div>
 </div>
@@ -13511,7 +13511,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Y por último generamos nuestra variable objetivo binaria, a la cual denominaremos <strong>credit</strong>, y que tomará como valor <em>True</em>, si nuestro crédito es superior al precio de la vivienda, y <em>False</em> en caso contrario.</p>
+<p>Por último generamos nuestra variable objetivo binaria, a la cual denominaremos <strong>credit</strong>, y que tomará como valor <em>True</em> en las viviendas que tengan precio superior a nuestro crédito, y <em>False</em> en caso contrario.</p>
 <p>Asimismo, estableceremos nuestro crédito en 230.000€:</p>
 
 </div>
@@ -13622,7 +13622,7 @@ Número de datos para test: 5204
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Una vez disponemos ya de los datos debidamente preparados, procedemos a entrenar nuestro modelo logístico con el subcojunto de <em>train</em>, tras lo cual lo validaremos haciendo predicciones sobre el conjunto de <em>test</em>. Finalmente, además de comprobar la precision (<em>accuracy</em>) de nuestro modelo, visualizaremos la curva ROC.</p>
+<p>Una vez disponemos ya de los datos debidamente preparados, procedemos a entrenar nuestro modelo logístico con el subcojunto de <em>train</em>, tras lo cual, lo validaremos haciendo predicciones sobre el conjunto de <em>test</em>. Finalmente, además de comprobar la precision (<em>accuracy</em>) de nuestro modelo, visualizaremos la curva ROC.</p>
 
 </div>
 </div>
@@ -13719,9 +13719,9 @@ Accuracy: 91.47 %
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Para el caso del modelo de regresión lineal, nos valdremos de la técnica de potenciación del gradiente (<em>Gradient Boosting</em>), la cual sirve para generar un modelo predictivo de gran precisión mediante la suma de muchos modelos de predicción débiles (árboles de decisión).</p>
 <p>Más concretamente, emplearemos una implementación de esta técnica llamada <strong>XG-Boost</strong>, <em>eXtreme Gradient Boosting</em>, ya que se ha convertido, gracias a su eficiencia y eficacia, en uno de los modelos más empleados en la actualidad para lidiar con problemas de regresión y clasificación relacionados con datos tabulares, como en este caso.</p>
-<p>Este gran rendimiento viene dado, entre otros factores, por el amplio abaníco de hiperparámetros que contiene. Estos hiperparámetros permiten un ajuste muy minucioso y, con una buena afinación, se puede lograr optimizar y mejorar el resultado obtenido de forma considerable.</p>
+<p>Este gran rendimiento viene dado, entre otros factores, por el amplio abanico de hiperparámetros que contiene. Estos hiperparámetros permiten un ajuste muy minucioso y, con una buena afinación, se puede lograr optimizar y mejorar el resultado obtenido de forma considerable.</p>
 <p>No obstante, esta afinación no es trivial, y requiere que, para conseguir buenos resultados, sea necesaria una cuidadosa estrategia de hiperparametrización.</p>
-<p>Así, dado que gran parte de la implementación del modelo de regresión recae sobre esta búsqueda, conviene realizar una breve descripción inicial acerca de cuales son estos hiperparámetros, y de qué modo afectan a nuestro modelo:</p>
+<p>Así, dado que gran parte de la implementación del modelo de regresión líneal recae sobre esta búsqueda, conviene realizar una breve descripción inicial acerca de cuales son estos hiperparámetros, y de qué modo afectan a nuestro modelo:</p>
 
 </div>
 </div>
@@ -13745,33 +13745,33 @@ Accuracy: 91.47 %
 </ul>
 <p>Con este hiperparámetro especificamos la función de coste que tratamos de minimizar. Así, cada nuevo árbol que XG-Boost genere, tendrá por único objetivo minimizar esta función.</p>
 <p>La función de coste que nosotros emplearemos será la raíz del error cuadrático medio (<strong>RMSE</strong>). Por lo tanto, cuanto menor sea el <strong>RMSE</strong> que obtengamos con un modelo, asumiremos que mejor es éste, ya que, en suma, los precios reales de las viviendas se ajustarán más a su hiperplano de regresión que al de otros modelos.</p>
-<p>Si bien, para nuestro escenario <em>RMSE</em> parece ser la función de coste más apropiada, dependiendo de lo que se quisiera obtener, podría haberse optado por utilizar otra función de coste, como por ejemplo <em>MAE</em>, <em>LOG COSH</em> o <em>HUBER</em>.</p>
+<p>Aún así, si bien para nuestro escenario hemos decidido que <em>RMSE</em> parece la función de coste más apropiada, dependiendo de lo que se quisieramos obtener, podríamos haber optado por utilizar otra función de coste, como por ejemplo <em>MAE</em>, <em>LOG COSH</em> o <em>HUBER</em>.</p>
 <ul>
 <li><strong><font color=#5F66A1>n_estimators</font></strong>:</li>
 </ul>
-<p>Sirve para establecer cuántos árboles queremos exactamente que se construyan. Juega un papel fundamental en el aprendizaje de nuestro modelo ya que, con cada nuevo árbol, XG-Boost tratará de minimizar la función de coste que le hayamos asignado (RMSE). Por tanto, cuanto mayor sea el número de árboles que empleemos, más estaremos minimizado nuestro error...</p>
+<p>Sirve para establecer cuántos árboles queremos exactamente que se construyan. Este hiperparámetro juega un papel fundamental en el aprendizaje de nuestro modelo, ya que, con cada nuevo árbol, XG-Boost minimizara un poco más el RMSE. Por tanto, cuanto mayor sea el número de árboles que empleemos, podemos afirmar que más estaremos minimizado nuestro error...</p>
 <p>...no obstante, resulta necesario subrayar aquí que el error que XG-Boost minimizará será el error del conjunto de entrenamiento. Es decir, el modelo aprenderá a predecir cada vez más certeramente el precio de aquellas viviendas con las que se entrene. Pero el hecho de que aprenda a predecir cada vez mejor los precios de estas casas, no siempre conlleva que aprenda a hacer lo propio con otras viviendas. Es más, lo que sucederá es que, a partir de un cierto número de árboles, el modelo se sobrespecializará tanto (<em>overfitting</em>) en los datos de entrenamiento que ya no sabrá generalizar este conocimiento, y empezará a realizar predicciones cada vez más desacertadas. Por ello, la clave, aquí, será ajustar este hiperparámetro hasta encontrar ese punto en el cual se consigue un modelo complejo, pero que además es capaz de generalizar.</p>
 <ul>
 <li><strong><font color=#5F66A1>early_stopping</font></strong>:</li>
 </ul>
-<p>Una buena estrategia para obtener el número de árboles adecuado es dividir el conjunto de entrenamiento en 2 nuevos subconjuntos, y usar uno para entrenar el modelo, y el otro para validarlo.</p>
-<p>De este modo, escogiendo un número muy elevado de árboles, podremos ver que tanto el error en el conjunto de entrenamiento, como en el de validación, en ambos, va disminuyendo. Sin embargo, veremos que, llegados a un punto, pese a que el error en el conjunto entrenamiento sigue disminuyendo, el error en el conjunto de validación ya no disminuirá, y empezará a incrementar.</p>
+<p>Una buena estrategia para obtener el número de árboles adecuado es dividir el conjunto de entrenamiento en 2 nuevos subconjuntos, y usar uno para entrenar el modelo, y otro para validarlo.</p>
+<p>De este modo, escogiendo un número muy elevado de árboles, podremos ver que tanto el error en el conjunto de entrenamiento, como en el de validación, en ambos, va disminuyendo. Sin embargo, veremos que, llegados a un punto, pese a que el error en el conjunto entrenamiento sigue disminuyendo, el error en el conjunto de validación ya no disminuye más, sino que empieza paulatinamente a incrementar.</p>
 <p>Ese punto de inflexión será el punto en el cual el modelo se está empezando a sobrespecializar. Por lo tanto, nos convendrá seleccionar el número de árboles justo previo a ese punto.</p>
-<p>Para ello, tenemos diferentes alternativas. La forma más sencilla sería la de entrenar nuestro modelo con un número muy elevado de árboles, y evaluar cuándo se ha dado el punto de inflexión a posteriori. Sin embargo, entrenar un modelo con un número muy elevado de árboles es costoso. Una forma más eficiente puede ser la de ir monitorizando la tendencia del error en el conjunto de validación, y detener la creación de árboles en cuanto se detecte que ya no decrece.</p>
-<p>Pero, dado que el modelo no busca minimizar el error del conjunto de validación, puede ocurrir que se de un pequeño paso en falso en algún momento que haga aumentar por un momento el error, pero que no por ello hayamos llegado al punto donde empieza a generarse <em>overfitting</em>. Es más, estos pequeños pasos en falso son muy habituales a partir de cierto punto.</p>
-<p>Con lo cual, un enfoque aún mejor que el de parar el crecimiento al primer indicio de retroceso, puede ser el de detenerse solo tras un cierto número de pasos en falso consecutivos. Y eso es para lo que sirve exactamente el hiperparámetro <strong>early_stopping</strong>; para controlar cuántos pasos en falso podemos dar antes de considerar que la tendencia no es reversible, y que es mejor dejar de generar más árboles, evitando de tal modo el tener que generar un ingente número de árboles en vano.</p>
+<p>Para ello, tenemos diferentes alternativas. La forma más sencilla sería la de entrenar nuestro modelo con un número muy elevado de árboles, y evaluar a posteriori cuándo se ha dado el punto de inflexión. Sin embargo, entrenar un modelo con un número muy elevado de árboles es costoso. Por ello, una forma más eficiente que esa puede ser la de ir monitorizando la tendencia del error en el conjunto de validación, y detener la creación de árboles en cuanto se detecte que éste ya no decrece.</p>
+<p>Pero, dado que el modelo no busca minimizar el error del conjunto de validación, puede ocurrir que se de un pequeño paso en falso en algún momento que haga aumentar por un momento el error, pero que no por ello hayamos llegado al punto donde empieza a generarse <em>overfitting</em>. Es más, estos pequeños retrocesos en el error del conjunto de validación son muy habituales a partir de cierto punto.</p>
+<p>Con lo cual, un enfoque aún mejor que el de parar el crecimiento al primer indicio, puede ser el de detenerse solo tras un cierto número de pasos en falso consecutivos. Y eso es para lo que sirve exactamente el hiperparámetro <strong>early_stopping</strong>; para controlar cuántos pasos en falso podemos dar antes de considerar que la tendencia no es reversible, y que es mejor dejar ya de generar más árboles, evitando de tal modo el tener que continuar con un costoso entrenamiento en vano.</p>
 <ul>
 <li><strong><font color=#5F66A1>learning_rate</font></strong>:</li>
 </ul>
-<p>Se ha mencionado ya en varias ocasiones que XG-Boost generará nuevos árboles, mediante los cuales, buscará de minimizar el error cuadrático medio. Sin embargo, hasta ahora no hemos hablado de la velocidad con la que XG-Boost tratará de acercarse a este mínimo. Este hiperparámetro sirve precisamente para eso, para controlar la tasa de aprendizaje con la cual un árbol nuevo trata de corregir los errores.</p>
-<p>Cuanto mayor sea la tasa, más rápido tratará el modelo de alcanzar ese mínimo. Esto será muy beneficioso en las primeras iteraciones, ya que con pocos pasos, estaremos muy cerca ya del mínimo. Sin embargo, cerca del mínimo, cuando el ajuste necesario sea muy sutil, si los cambios son demasiado bruscos, provocará que no se pueda alcanzar exactamente el punto mínimo, sino otro más o menos cercano, dependiendo de cuán alto hayamos forzado que sea la tasa de aprendizaje.</p>
-<p>Por otro lado, tasas más pequeñas, fuerzan que el aprendizaje sea más lento, por lo que, con cada árbol nuevo, el modelo tratará de corregir el error de forma más gradual. Esto hará que se necesite más árboles para converger, pero a su vez, permitirá que se converja de forma más precisa en el punto mínimo.</p>
-<p>No obstante, si tomamos una tasa de aprendizaje demasiado pequeña, cabe la posibilidad que se converja, no en el mínimo global, sino en un mínimo local. Sin embargo, en la práctica no suele ser muy habitual que se converja en un mínimo local, y en general, cuanto menor sea la tasa de aprendizaje, mejores serán los resultados, siempre a costa de requerir muchísimo más tiempo para el entrenamiento del modelo.</p>
+<p>Se ha mencionado ya en varias ocasiones que XG-Boost generará nuevos árboles, mediante los cuales, buscará minimizar el error cuadrático medio. Sin embargo, hasta ahora no hemos hablado de la velocidad con la que XG-Boost trata de acercarse a este mínimo. Este hiperparámetro sirve precisamente para eso, para controlar la tasa de aprendizaje con la cual un árbol nuevo trata de corregir los errores que comete.</p>
+<p>Cuanto mayor sea la tasa, más rápido tratará el modelo de alcanzar ese mínimo. Esto será muy beneficioso en las primeras iteraciones, ya que con pocos pasos, pasaremos de tener un modelo con un RMSE altísimo, a otro con un RMSE bastante cerca del mínimo. Sin embargo, cerca de ese mínimo será cuando se requiera que cada ajuste sea cada más y áms sutil. Por ello, si nuestra tasa de aprendizaje es muy alta, solo será capaz de generar cambios bruscos, y nunca podrá converger lo suficiente, dando como resultado un RMSE más alto que el que obtendríamos de haber optado por una tasa inferior.</p>
+<p>Por otro lado, eligiendo tasas muy pequeñas, forzamos que el aprendizaje sea más lento, por lo que, con cada árbol nuevo, el modelo trata de corregir el error de forma más gradual. Esto hace que se necesiten muchos más árboles para acercarse al RMSE mínimo, lo cual se traduce en un coste computacional mucho mayor, pero a su vez, permite que se converja de forma más precisa.</p>
+<p>Ademas, si tomamos una tasa de aprendizaje demasiado pequeña, cabe la posibilidad que se converja, no en el mínimo global, sino en un mínimo local. Sin embargo, en la práctica, no suele ser muy habitual que se converja en un mínimo local, y en general, cuanto menor sea la tasa de aprendizaje, mejores serán los resultados, siempre a costa de requerir bastante más tiempo para el entrenamiento del modelo.</p>
 <ul>
 <li><strong><font color=#5F66A1>max_depth</font></strong>:</li>
 </ul>
 <p>Con este hiperparámetro restringimos la profundidad de cada árbol de decisión. Cuanto mayor sea la profundidad, más complejo será cada árbol de nuestro modelo, lo cual, si bien puede posibilitar predicciones más complicadas, también puede generar <em>overfitting</em>.</p>
-<p>A su vez, dado que a mayor profundidad, más complejidad, cuanto mayor sea nuestro valor de <strong>max_depth</strong>, menor será el número de árboles a partir del cual empezaremos a padecer un sobreentrenamiento.</p>
+<p>A su vez, dado que a mayor profundidad, más complejidad, cuanto mayor sea nuestro valor de <strong>max_depth</strong>, por lo general menor será el número de árboles a partir del cual empezaremos a padecer un sobreentrenamiento.</p>
 <ul>
 <li><strong><font color=#5F66A1>min_child_weight</font></strong>:</li>
 </ul>
@@ -13781,8 +13781,8 @@ Y viceversa, a medida que su valor se vaya acercando a 1 (nodos sin ninguna rest
 <ul>
 <li><strong><font color=#5F66A1>subsample</font></strong> &amp; <strong><font color=#5F66A1>colsample_bytree</font></strong>: </li>
 </ul>
-<p>Con estos dos hiperparámetros restringimos el número de observaciones y variables para cada árbol. Sus valores van de 0 a 1, y reflejan el porcentaje de observaciones/columnas que se usan, donde 0 significa que no se usa ninguna observación/columna, y donde 1 significa que se usan todas.</p>
-<p>Esta restricción sirve para forzar a que cada árbol emplee distintas variables y distintas reglas para su contrucción. Así, nuevamente, cuanto menor sea su valor, más conservadores seremos, lo cual podrá evitar un posible <em>overfitting</em> a costa de perder cierta complejidad.</p>
+<p>Con estos dos hiperparámetros restringimos el número de observaciones y variables para cada árbol. Sus valores van de 0 a 1, y reflejan el porcentaje de observaciones/columnas que se usan en la construcción de cada nuevo árbol, donde 0 significa que no se usa ninguna observación/columna, y donde 1 significa que se usan todas.</p>
+<p>Esta restricción sirve para forzar a que cada árbol emplee distintas variables y distintas reglas para su construcción. Así, nuevamente, cuanto menor sea su valor, más conservadores seremos, lo cual podrá evitar un posible <em>overfitting</em> a costa de perder cierta complejidad.</p>
 <ul>
 <li><strong><font color=#5F66A1>gamma</font></strong> &amp; <strong><font color=#5F66A1>reg_alpha</font></strong>:</li>
 </ul>
@@ -13801,7 +13801,7 @@ Y viceversa, a medida que su valor se vaya acercando a 1 (nodos sin ninguna rest
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A lo largo de la optimizacion de hiperparámetros, será necesario implementar y probar un gran número de modelos hasta encontrar aquel que mejores resultados nos ofrezca. Para esta tarea crearemos unas cuantas funciones:</p>
+<p>A lo largo de la optimización de hiperparámetros, será necesario implementar y probar un gran número de modelos hasta encontrar aquel que mejores resultados nos ofrezca. Para esta tarea crearemos unas cuantas funciones:</p>
 <p>La primeras dos funciones nos servirán para generar una búsqueda por rejilla y para plasmar los resultados de las distintas combinaciones mediante un mapa de calor. Así, mediante ambas funciones, trataremos de encontrar la mejor combinación de hiperparámetros posible:</p>
 
 </div>
@@ -13875,7 +13875,7 @@ Y viceversa, a medida que su valor se vaya acercando a 1 (nodos sin ninguna rest
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>La segunda la usaremos cuando queramos obtener un número de árboles adecuado aproximado mediante validación cruzada:</p>
+<p>La tercera la usaremos cuando queramos obtener un número de árboles adecuado aproximado mediante validación cruzada, valíendonos de <em>early stopping</em>:</p>
 
 </div>
 </div>
@@ -13908,7 +13908,7 @@ Y viceversa, a medida que su valor se vaya acercando a 1 (nodos sin ninguna rest
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ésta la usaremos para entrenar y validar nuestro modelo final:</p>
+<p>La cuarta la usaremos para entrenar y validar nuestro modelo final:</p>
 
 </div>
 </div>
@@ -13960,7 +13960,7 @@ Y viceversa, a medida que su valor se vaya acercando a 1 (nodos sin ninguna rest
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Además, definimos una quinta función para visualizar los residuos entre el precio predicho y el precio real de las viviendas de nuestro modelo final, junto con el porcentaje de viviendas que están a un margen de distancia máximo del valor RMS (raíz del error cuadrático medio):</p>
+<p>Además, definimos una quinta función para visualizar los residuos entre el precio predicho y el precio real de las viviendas de nuestro modelo final, junto con el porcentaje de viviendas que están a un margen de distancia máximo del valor RMSE (raíz del error cuadrático medio):</p>
 
 </div>
 </div>
@@ -14086,7 +14086,7 @@ Y viceversa, a medida que su valor se vaya acercando a 1 (nodos sin ninguna rest
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Y por último, definimos otra función que nos servirá reflejar la curva de aprendizaje de nuestro modelo:</p>
+<p>Y por último, definimos otra función que nos servirá para reflejar la curva de aprendizaje de nuestro modelo:</p>
 
 </div>
 </div>
@@ -14139,9 +14139,9 @@ Y viceversa, a medida que su valor se vaya acercando a 1 (nodos sin ninguna rest
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Con este segundo modelo, implementaremos un modelo de regresión para tratar de predecir el precio de las viviendas. Para ello, antes de poder alimentar nuestro modelo, sera necesario adaptar nuevamente los datos de acuerdo con las necesidades del modelo.</p>
-<p>Así, el modelo de regresión lineal requiere que las variables sean también numéricas. Por lo tanto, procedemos nuevamente a emplear <strong>one-hot-encoding</strong>, tal y como se hiciera en el ejemplo anterior:</p>
-<p>No obstante, antes de satisfacer estas necesidades, realizaremos una criba preliminar de los datos que disponemos, descartando todas las viviendas con precio superior a los 400.000€:</p>
+<p>Con este segundo modelo, implementaremos un modelo de regresión para tratar de predecir el precio de las viviendas. Para ello, antes de poder alimentarlo con datos, sera necesario adaptar estos de acuerdo con las necesidades del modelo.</p>
+<p>Así, el modelo de regresión lineal requiere que las variables sean también numéricas. Por lo tanto, procedemos nuevamente a emplear <strong>one-hot-encoding</strong>, tal y como se hiciera en la implementación del modelo anterior:</p>
+<p>No obstante, antes de nada realizaremos una criba preliminar de los datos que disponemos, descartando todas las viviendas con precio superior a los 400.000€:</p>
 
 </div>
 </div>
@@ -14249,8 +14249,7 @@ Número de datos para test: 4358
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Tras dividir el conjunto, entrenaremos y validaremos nuestro primer modelo XG-Boost sin realizar ningún tipo de hiperparametrización, empleando aquellos asignados por defecto. Esto nos valdrá para poder compararlo con nuestro modelo final, y  comprobar así si la estrategia de afinación de los hiperparámetros ha servido para mejorar el resultado preliminar.</p>
-<p>Para ello, estableceremos <strong>RMSE</strong> como la función de coste que se quiere minimizar:</p>
+<p>Tras dividir el conjunto, entrenaremos y validaremos nuestro primer modelo XG-Boost sin realizar ningún tipo de hiperparametrización, empleando aquellos que se asignan por defecto. Esto nos valdrá para poder compararlo con nuestro modelo final, y  comprobar así si la estrategia de afinación de los hiperparámetros ha servido para mejorar el resultado preliminar:</p>
 
 </div>
 </div>
@@ -14348,7 +14347,7 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>El primer paso de la hiperparametrización será hallar la mejor combinación para el número y la profundidad de los árboles. Ambos parámetros están estrechamente relacionados, dado que, por lo general, a mayor profundidad, menor será el número de árboles necesario. Por ello, emplearemos una rejilla con distintas combinaciones para así descubrir cual parece ser la mejor opción.</p>
+<p>El primer paso de la hiperparametrización será hallar la mejor combinación para el número y la profundidad de los árboles. Ambos parámetros están estrechamente relacionados, dado que, por lo general, a mayor profundidad, menor es el número de árboles necesario. Por ello, emplearemos una rejilla con distintas combinaciones para así descubrir cual parece ser la mejor opción.</p>
 <p>No obstante, empezaremos por redefinir el resto de parámetros, los cuales se mantendran constantes para cada combinación de la rejilla:</p>
 
 </div>
@@ -14582,7 +14581,7 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A continuación, trataremos de encontrar el valor de <strong>min_child_weight</strong> que mejores resultados parezca ofrecer. Para ello, nuevamente, emplearemos una búsqueda por rejilla:</p>
+<p>A continuación, trataremos de encontrar el valor de <strong>min_child_weight</strong> que mejor resultados parezca ofrecer. Para ello, nuevamente, emplearemos una búsqueda por rejilla:</p>
 
 </div>
 </div>
@@ -14666,7 +14665,7 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Vemos que el mejor valor para <strong>min_child_weight</strong> es el que ya teníamos, con lo cual, lo dejamos tal y como está.</p>
+<p>Vemos que el mejor valor para <strong>min_child_weight</strong> es el que ya teníamos (1), con lo cual, lo dejamos tal y como está.</p>
 
 </div>
 </div>
@@ -14853,7 +14852,7 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Volvemos nuevamente a generar otra rejilla para afinar por última vez en la búsqueda:</p>
+<p>Y volvemos nuevamente a generar otra tercera rejilla para afinar por última vez la búsqueda:</p>
 
 </div>
 </div>
@@ -14938,7 +14937,7 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Vemos que los valores no varían, por lo que actualizamos los parámetros:</p>
+<p>Finalmente, actualizamos los parámetros con la mejor combinación de valores:</p>
 
 </div>
 </div>
@@ -14970,7 +14969,7 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Tras haber definido tanto el número como la profundidad y características de los árboles, así como el porcentaje de datos y columnas que emplearemos para cada uno de estos árboles, el siguiente paso es ajustar los parámetros de regularización.</p>
+<p>Tras haber definido tanto el número como la profundidad y características de los árboles, así como el porcentaje de datos y columnas que emplearemos para cada uno de estos árboles, el siguiente paso es ajustar la regularización.</p>
 <p>Para ello, nuevamente, nos valdremos de la búsqueda de rejilla para hallar, primero los mejores valores para <strong>gamma</strong>, y luego para  <strong>reg_alpha</strong>:</p>
 
 </div>
@@ -15154,10 +15153,10 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Una vez hemos seleccionado los valores para los distintos parámetros, el último paso será disminuir el valor de <strong>learning_rate</strong>, con lo cual, conseguiremos una afinación más precisa que, previsiblemente, haga que las predicciones sean más certeras.</p>
-<p>No obstante, el escoger un <strong>learning_rate</strong> inferior acarreará que tengamos que escoger un nuevo número de árboles, ya que de mantener el que teníamos hasta ahora, no acabaría de convergería lo suficiente (necesitará muchos más).</p>
-<p>Por otro lado, cabe recordar que los hiperparámetros que hemos ido seleccionando no son del todo independientes. Por lo tanto, el seleccionar nuevos valores tanto para <strong>learning rate</strong> como para <strong>n_estimators</strong>, probablemente, genere que la selección que hemos llevado a cabo en los pasos previos, si bien seguirá siendo buena, quizás ya no sea los óptima. Sin embargo, la búsqueda de hiperparámetros con un nivel tan bajo de <strong>learning_rate</strong> hubiera supuesto tiempos de entrenamiento demasiado elevados:</p>
-<p>Por lo tanto, nos limitaremos a mantener los parámetros seleccionados en los pasos previos, excepto el número de árboles, que lo actualizaremos valíendonos de <strong>early_stopping_rounds</strong>:</p>
+<p>Una vez hemos seleccionado los valores para los distintos parámetros, el último paso será disminuir el valor de <strong>learning_rate</strong>, para así tratar de conseguir una afinación más precisa que, previsiblemente, hará que las predicciones sean más certeras.</p>
+<p>No obstante, el escoger un <strong>learning_rate</strong> inferior acarreará que tengamos que escoger un nuevo número de árboles, ya que de mantener el que teníamos hasta ahora, no acabaría de converger lo suficiente (necesitará muchos más).</p>
+<p>Por otro lado, cabe resaltar que los hiperparámetros que hemos ido seleccionando no son del todo independientes. Esto se traduce en que, el seleccionar nuevos valores tanto para <strong>learning rate</strong> como para <strong>n_estimators</strong>, probablemente, genere que la selección que hemos llevado a cabo en los pasos previos, si bien seguirá siendo buena, quizás ya no sea la óptima. Sin embargo, para poder descubir cuál es la nueva combinación óptima, tendríamos que haber realizado la búsqueda implementando modelos no con 550 árboles sino con muchísimos más, lo cual, hubiera supuesto tiempos de entrenamiento demasiado elevados.</p>
+<p>Por lo tanto, nos limitaremos a mantener los parámetros seleccionados en los pasos previos, excepto el número de árboles, que lo actualizaremos valiéndonos de <strong>early_stopping_rounds</strong>:</p>
 
 </div>
 </div>
@@ -15262,8 +15261,8 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Vemos que, tras la hiperparametrización, hemos conseguido reducir significativamente el RMSE de 40895 a 36717. Así, nuestro error ha pasado de un 19.14%, a un 17.18%.</p>
-<p>De este modo, vemos que el modelo predice acertadamente el precio de la vivienda para el 74.83% de las viviendas con un margen de cerca de los 37.000€.</p>
+<p>Vemos que, tras la hiperparametrización, hemos conseguido reducir significativamente el RMSE de 40895 a 36717. Así, nuestro error ha pasado de un 19.14%, a un 17.18%, lo cual significa que la estrategia llevada a cabo en la hiperparametrización ha servido para disminuir de forma considerable nuestro error inicial.</p>
+<p>De este modo, vemos que el modelo predice acertadamente el precio de la vivienda para el 74.83% de las viviendas con un margen de error cercano a los 37.000€.</p>
 <p>Detallando más, vemos que el modelo predice correctamente el 41% de las viviendas con un margen de 15.000€, un 67% de las viviendas con un margen de 30.000€, y un 85% de las viviendas con un margen de 50.000€.</p>
 
 </div>
@@ -15279,7 +15278,7 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Una vez visto el poder predictivo de nuestro modelo, podemos comprobar cuáles son las variables mas importantes a la hora de predecir los precios de las viviendas, utilizando para ello los <strong>F-Score</strong>. Para ello, empezamos mostrando las variables en un gráfico:</p>
+<p>Una vez visto el poder predictivo de nuestro modelo, podemos aprovechar para comprobar cuáles han sido las variables mas importantes a la hora de predecir los precios de las viviendas, utilizando para ello los <strong>F-Score</strong>. Para ello, empezamos mostrando las variables más importantes en un gráfico:</p>
 
 </div>
 </div>
@@ -15323,7 +15322,7 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>En el gráfico superior, se observa que las distintas categorías de las variables categóricas se computan de forma independiente. Por ello, para medir, por ejemplo, el impacto que tiene la ubicación de la vivienda en su precio, resulta más útil reflejar la importancia tras agrupar todas las categorías en una sola variable:</p>
+<p>En el gráfico superior, se observa que las distintas categorías de las variables categóricas se computan de forma independiente. Es decir, en lugar de computar la variable <strong>location</strong>, por ejemplo, se computa la importancia de cada una de las ubicaciones. Por ello, para medir, el impacto que tiene cada una de las variables categóricas, resulta más útil reflejar la importancia tras agrupar todas las categorías en una sola variable. Por lo tanto, se procede a ello:</p>
 
 </div>
 </div>
@@ -15372,11 +15371,11 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Vemos que, ahora sí, las variables categóricas ya se reflejan de forma agrupada. Por lo tanto, analizando la importancia de las variables, observamos lo siguiente...</p>
-<p>...el factor más relevante a la hora de predecir el precio de las viviendas es su tamaño, definido en este caso mediante sus metros cuadrados reales (<strong>m2_real</strong>).</p>
+<p>Vemos que, ahora sí, las variables categóricas ya se reflejan de forma agrupada. Así, analizando la importancia de las variables, observamos lo siguiente...</p>
+<p>...<strong>el factor más relevante a la hora de predecir el precio de las viviendas es su tamaño</strong>, definido en este caso mediante sus metros cuadrados reales (<strong>m2_real</strong>).</p>
 <p>...tras el tamaño, vemos que la siguiente variable mas relevante es la ubicación de las viviendas (<strong>location</strong>).</p>
 <p>... tras estas dos variables, las siguientes 3 variables más importantes son, en este orden, el número de planta de las viviendas (<strong>floor</strong>), la cantidad de habitaciones (<strong>room_num</strong>) y la cantidad de baños (<strong>bath_num</strong>).</p>
-<p>De las cinco variables más relevantes, quizás, la única que sorprenda en cierto modo, sea la del número de planta de las viviendas, ya que, en el análisis exploratorio de la fase anterior, en principio, no parecía que el número de plantas pudiera tener un impacto directo en el precio. Al menos, no como para ser el tercer factor más determinante.</p>
+<p>De las cinco variables más relevantes, quizás, la única que sorprenda en cierto modo, sea la del número de planta de las viviendas, ya que, en el análisis exploratorio de la fase anterior, en principio, no parecía que el número de plantas pudiera tener un impacto directo en el precio, al menos no como para ser el tercer factor más determinante.</p>
 
 </div>
 </div>
@@ -15391,7 +15390,7 @@ Name: perc, dtype: float64
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Por último, puede resultar interesante explorar si nuestro modelo podíra beneficiarse de la obteniendo más datos. Para ello, nos reflejaremos la curva de aprendizaje de nuestro modelo final, dibujando asi la evolución del error que genera nuestro modelo en función del número de muestras que usa para el entrenamiento:</p>
+<p>Por último, puede resultar interesante explorar si nuestro modelo podría beneficiarse de la obteniendo más datos. Para ello, reflejaremos la curva de aprendizaje de nuestro modelo final, dibujando así la evolución del error que genera nuestro modelo en función del número de muestras que usa para el entrenamiento:</p>
 
 </div>
 </div>
@@ -15447,8 +15446,8 @@ Wall time: 1h 21min 4s
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Vemos por un lado que nuestro modelo tiene cierta varianza, ya que existe un espacio considerable entre la curva de aprendizaje de los datos de entrenamiento y la curva de aprendizaje de los datos de validación. Dicho de otro modo, nuestro modelo sufre un tanto de <em>overfiting</em> con los datos de entrenamiento, haciendo que su rendimiento con los datos de entrenamiento sea bastante mejor que el rendimiento que ofrece con los datos de validacion. Por otro lado, atendiendo a la tendencia del error de validación, vemos que éste disminuye de forma gradual conforme se emplean más datos.</p>
-<p>Por lo tanto, en vista de lo expuesto, podemos intuir que la incorporación de más datos ayudaría a mejorar nuestro modelo. Así, a fuerza de añadir más datos, el error de validación iría convergiendo cada vez más con el error de entrenamiento. Esta convergencia, probablemente, se diera en torno a los 30.000 RMSE, y a partir de ese punto, añadir más datos no nos serviría para reducir el error. Con lo cual, si quisieramos intentar reducir el RMSE por debajo de ese punto de convergencia, nuestro esfuerzo debería de centrarse, sobretodo, en tratar de incorporar, no más datos, sino otro tipo de variables distintas al estudio.</p>
+<p>Vemos por un lado que nuestro modelo tiene cierta varianza, ya que existe un espacio considerable entre la curva de aprendizaje de los datos de entrenamiento y la curva de aprendizaje de los datos de validación. Dicho de otro modo, nuestro modelo sufre un tanto de <em>overfiting</em>, haciendo que su rendimiento con los datos de entrenamiento sea bastante mejor que el rendimiento que ofrece con los datos de validacion. Por otro lado, atendiendo a la tendencia del error de validación, vemos que éste disminuye de forma gradual conforme se emplean más datos.</p>
+<p>Por lo tanto, en vista de lo expuesto, <strong>podemos intuir que la incorporación de más datos ayudaría a mejorar nuestro modelo</strong>. Así, a fuerza de añadir más datos, el error de validación iría convergiendo cada vez más con el error de entrenamiento. Esta convergencia, probablemente, se diera en torno a los 30.000 RMSE, y a partir de ese punto, añadir más datos no nos serviría para reducir el error. Si quisieramos intentar reducir el RMSE por debajo de ese punto de convergencia, nuestro esfuerzo debería de centrarse, sobretodo, en tratar de incorporar no más datos sino otro tipo de variables distintas al estudio que ahora estemos pasando por alto.</p>
 
 </div>
 </div>
